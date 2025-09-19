@@ -1,0 +1,111 @@
+LDA           03
+STA           0F
+LDCH          53
+STCH          57
+MOV AX,BX     89D8
+MOV AX,1234H  B83412
+MOV [BX],AX   8907
+ADD AX,BX     03D8
+ADD AX,1234H  053412
+ADD [BX],AX   0107
+SUB AX,BX     2BD8
+SUB AX,1234H  2D3412
+SUB [BX],AX   2907
+INC AX        40
+DEC AX        48
+MUL BX        F7E3
+DIV BX        F7F3
+AND AX,BX     23D8
+OR AX,BX      0BD8
+XOR AX,BX     33D8
+CMP AX,BX     3BD8
+JMP LABEL     E9xxxx
+JE LABEL      74xx
+JNE LABEL     75xx
+CALL LABEL    E8xxxx
+RET           C3
+NOP           90
+PUSH AX       50
+POP AX        58
+INT 21H       CD21
+HLT           F4
+MOV AL,BL     88C3
+MOV AX,[SI]   8B04
+MOV [DI],AX   8905
+MOV AX,[BP+4] 8B4604
+MOV [BX+SI],AX 8900
+LEA BX,[SI]   8D1C
+LEA AX,[BP+DI] 8D84
+XCHG AX,BX    93
+XCHG AX,CX    91
+XCHG AX,DX    92
+PUSH BX       53
+POP BX        5B
+PUSHF         9C
+POPF          9D
+ADD AL,12H    0412
+ADD BX,AX     01D8
+ADD [BX],AX   0107
+ADC AX,BX     13D8
+ADC AX,1234H  153412
+SUB AL,20H    2C20
+SUB CX,DX     29CA
+SUB [SI],AX   2904
+DEC BX        4B
+INC SI        46
+MUL AL        F6E0
+MUL AX        F7E0
+IMUL BX       F7EB
+DIV AL        F6F0
+DIV BX        F7F3
+IDIV AX       F7FB
+AND AL,0FH    240F
+AND AX,[BP+6] 234606
+OR AL,0FFH    0CFF
+OR AX,[BX]    0B07
+XOR AX,CX     33C8
+XOR [DI],AL   3005
+CMP BX,AX     3BD8
+CMP AL,0FFH   3CFF
+CMP [SI],AX   3904
+TEST AL,0FH   A80F
+TEST AX,[BP+8] A9xxxx
+SHL AL,1      D0E0
+SHR AX,1      D1E8
+SAR BX,1      D1F8
+ROL AX,1      D1C0
+ROR AX,CL     D3C8
+RCL AX,CL     D3D0
+RCR BX,CL     D3DA
+NOT AL        F6D0
+NEG AX        F7D8
+CALL FAR PTR  9Axxxxxxxx
+CALL NEAR PTR E8xxxx
+RET FAR       CB
+RET NEAR      C3
+JMP SHORT LABEL EBxx
+JMP NEAR LABEL E9xxxx
+JMP FAR PTR   EAxxxxxxxx
+JE LABEL      74xx
+JNE LABEL     75xx
+JG LABEL      7Fxx
+JL LABEL      7Cxx
+JGE LABEL     7Dxx
+JLE LABEL     7Exx
+LOOP LABEL    E2xx
+JC LABEL      72xx
+JNC LABEL     73xx
+INT 10H       CD10
+INT 21H       CD21
+IN AL,DX      EC
+IN AX,DX      ED
+OUT DX,AL     EE
+OUT DX,AX     EF
+HLT           F4
+STI           FB
+CLI           FA
+CLC           F8
+STC           F9
+CMC           F5
+NOP           90
+END           *
